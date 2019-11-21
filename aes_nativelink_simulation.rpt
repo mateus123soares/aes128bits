@@ -1,0 +1,415 @@
+Info: Start Nativelink Simulation process
+
+========= EDA Simulation Settings =====================
+
+Sim Mode              :  Gate
+Family                :  cycloneiii
+Quartus root          :  c:/altera/13.0sp1/quartus/bin64/
+Quartus sim root      :  c:/altera/13.0sp1/quartus/eda/sim_lib
+Simulation Tool       :  modelsim-altera
+Simulation Language   :  vhdl
+Version               :  93
+Simulation Mode       :  GUI
+Sim Output File       :  aes.vho
+Sim SDF file          :  aes__vhdl.sdo
+Sim dir               :  simulation\modelsim
+
+=======================================================
+
+Info: Starting NativeLink simulation with ModelSim-Altera software
+Sourced NativeLink script c:/altera/13.0sp1/quartus/common/tcl/internal/nativelink/modelsim.tcl
+Warning: File aes_run_msim_gate_vhdl.do already exists - backing up current file as aes_run_msim_gate_vhdl.do.bak11
+Probing transcript
+ModelSim-Altera Info: # Reading C:/altera/13.0sp1/modelsim_ase/tcl/vsim/pref.tcl 
+ModelSim-Altera Info: # do aes_run_msim_gate_vhdl.do 
+ModelSim-Altera Info: # if {[file exists gate_work]} {
+ModelSim-Altera Info: # 	vdel -lib gate_work -all
+ModelSim-Altera Info: # }
+ModelSim-Altera Info: # vlib gate_work
+ModelSim-Altera Info: # vmap work gate_work
+ModelSim-Altera Info: # Copying C:\altera\13.0sp1\modelsim_ase\win32aloem/../modelsim.ini to modelsim.ini
+ModelSim-Altera Info: # Modifying modelsim.ini
+ModelSim-Altera Warning: # ** Warning: Copied C:\altera\13.0sp1\modelsim_ase\win32aloem/../modelsim.ini to modelsim.ini.
+ModelSim-Altera Info: #          Updated modelsim.ini.
+ModelSim-Altera Info: # 
+ModelSim-Altera Info: # vcom -93 -work work {aes.vho}
+ModelSim-Altera Info: # Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+ModelSim-Altera Info: # -- Loading package STANDARD
+ModelSim-Altera Info: # -- Loading package TEXTIO
+ModelSim-Altera Info: # -- Loading package std_logic_1164
+ModelSim-Altera Info: # -- Loading package VITAL_Timing
+ModelSim-Altera Info: # -- Loading package VITAL_Primitives
+ModelSim-Altera Info: # -- Loading package dffeas_pack
+ModelSim-Altera Info: # -- Loading package altera_primitives_components
+ModelSim-Altera Info: # -- Loading package cycloneiii_atom_pack
+ModelSim-Altera Info: # -- Loading package cycloneiii_components
+ModelSim-Altera Info: # -- Compiling entity aes
+ModelSim-Altera Info: # -- Compiling architecture structure of aes
+ModelSim-Altera Info: # 
+ModelSim-Altera Info: # vcom -93 -work work {C:/Designs/AES128/aes_top.vhd}
+ModelSim-Altera Info: # Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+ModelSim-Altera Info: # -- Loading package STANDARD
+ModelSim-Altera Info: # -- Loading package TEXTIO
+ModelSim-Altera Info: # -- Loading package std_logic_1164
+ModelSim-Altera Info: # -- Loading package NUMERIC_STD
+ModelSim-Altera Info: # -- Compiling entity aes_top
+ModelSim-Altera Info: # -- Compiling architecture rtl of aes_top
+ModelSim-Altera Warning: # ** Warning: [4] C:/Designs/AES128/aes_top.vhd(45): (vcom-1207) An abstract literal and an identifier must have a separator between them.
+ModelSim-Altera Warning: # ** Warning: [4] C:/Designs/AES128/aes_top.vhd(49): (vcom-1207) An abstract literal and an identifier must have a separator between them.
+ModelSim-Altera Warning: # ** Warning: [4] C:/Designs/AES128/aes_top.vhd(56): (vcom-1207) An abstract literal and an identifier must have a separator between them.
+ModelSim-Altera Info: # 
+ModelSim-Altera Info: # vsim -t 1ps +transport_int_delays +transport_path_delays -sdftyp /inst_aes=aes_vhd.sdo -L altera -L cycloneiii -L gate_work -L work -voptargs="+acc"  aes_top
+ModelSim-Altera Info: # vsim +transport_int_delays +transport_path_delays -L altera -L cycloneiii -L gate_work -L work -voptargs=\"+acc\" -sdftyp /inst_aes=aes_vhd.sdo -t 1ps aes_top 
+ModelSim-Altera Info: # Loading std.standard
+ModelSim-Altera Info: # Loading std.textio(body)
+ModelSim-Altera Info: # Loading ieee.std_logic_1164(body)
+ModelSim-Altera Info: # Loading ieee.numeric_std(body)
+ModelSim-Altera Info: # Loading work.aes_top(rtl)
+ModelSim-Altera Info: # SDF 10.1d Compiler 2012.11 Nov  2 2012
+ModelSim-Altera Info: # 
+ModelSim-Altera Info: # Loading ieee.vital_timing(body)
+ModelSim-Altera Info: # Loading ieee.vital_primitives(body)
+ModelSim-Altera Info: # Loading altera.dffeas_pack
+ModelSim-Altera Info: # Loading altera.altera_primitives_components
+ModelSim-Altera Info: # Loading cycloneiii.cycloneiii_atom_pack(body)
+ModelSim-Altera Info: # Loading cycloneiii.cycloneiii_components
+ModelSim-Altera Info: # Loading work.aes(structure)
+ModelSim-Altera Info: # Loading cycloneiii.cycloneiii_routing_wire(behave)
+ModelSim-Altera Info: # Loading altera.dffeas(vital_dffeas)
+ModelSim-Altera Info: # Loading cycloneiii.cycloneiii_lcell_comb(vital_lcell_comb)
+ModelSim-Altera Info: # Loading cycloneiii.cycloneiii_io_ibuf(arch)
+ModelSim-Altera Info: # Loading ieee.std_logic_arith(body)
+ModelSim-Altera Info: # Loading cycloneiii.cycloneiii_io_obuf(arch)
+ModelSim-Altera Info: # Loading cycloneiii.cycloneiii_clkctrl(vital_clkctrl)
+ModelSim-Altera Info: # Loading cycloneiii.cycloneiii_ena_reg(behave)
+ModelSim-Altera Info: # Loading instances from aes_vhd.sdo
+ModelSim-Altera Info: # Loading timing data from aes_vhd.sdo
+ModelSim-Altera Warning: # ** Warning: Design size of 4 instances exceeds ModelSim ALTERA recommended capacity.
+ModelSim-Altera Info: # This may because you are loading cell libraries which are not recommended with
+ModelSim-Altera Info: # the ModelSim Altera version. Expect performance to be adversely affected.
+ModelSim-Altera Info: # ** Note: (vsim-3587) SDF Backannotation Successfully Completed.
+ModelSim-Altera Info: #    Time: 0 ps  Iteration: 0  Instance: /aes_top File: C:/Designs/AES128/aes_top.vhd
+ModelSim-Altera Info: # 
+ModelSim-Altera Info: # source aes_dump_all_vcd_nodes.tcl
+ModelSim-Altera Info: # 0
+ModelSim-Altera Info: # add wave *
+ModelSim-Altera Info: # view structure
+ModelSim-Altera Info: # .main_pane.structure.interior.cs.body.struct
+ModelSim-Altera Info: # view signals
+ModelSim-Altera Info: # .main_pane.objects.interior.cs.body.tree
+ModelSim-Altera Info: # run 6000 ns
+ModelSim-Altera Warning: # ** Warning: */DFFEAS HOLD  Low VIOLATION ON DATAIN WITH RESPECT TO CLK;
+ModelSim-Altera Info: # 
+ModelSim-Altera Info: #   Expected := 0.157 ns; Observed := 0.014 ns; At : 4.799 ns
+ModelSim-Altera Info: #    Time: 4799 ps  Iteration: 1  Instance: /aes_top/inst_aes/key_a35_a
+ModelSim-Altera Warning: # ** Warning: */DFFEAS HOLD  Low VIOLATION ON DATAIN WITH RESPECT TO CLK;
+ModelSim-Altera Info: # 
+ModelSim-Altera Info: #   Expected := 0.157 ns; Observed := 0.022 ns; At : 4.806 ns
+ModelSim-Altera Info: #    Time: 4806 ps  Iteration: 1  Instance: /aes_top/inst_aes/key_a24_a
+ModelSim-Altera Warning: # ** Warning: */DFFEAS HOLD High VIOLATION ON ENA WITH RESPECT TO CLK;
+ModelSim-Altera Info: # 
+ModelSim-Altera Info: #   Expected := 0.157 ns; Observed := 0.067 ns; At : 4.845 ns
+ModelSim-Altera Info: #    Time: 4845 ps  Iteration: 0  Instance: /aes_top/inst_aes/saidaRegSubBytes_a33_a
+ModelSim-Altera Warning: # ** Warning: */DFFEAS HOLD High VIOLATION ON ENA WITH RESPECT TO CLK;
+ModelSim-Altera Info: # 
+ModelSim-Altera Info: #   Expected := 0.157 ns; Observed := 0.067 ns; At : 4.847 ns
+ModelSim-Altera Info: #    Time: 4847 ps  Iteration: 0  Instance: /aes_top/inst_aes/saidaRegSubBytes_a37_a
+ModelSim-Altera Warning: # ** Warning: */DFFEAS HOLD High VIOLATION ON ENA WITH RESPECT TO CLK;
+ModelSim-Altera Info: # 
+ModelSim-Altera Info: #   Expected := 0.157 ns; Observed := 0.067 ns; At : 4.847 ns
+ModelSim-Altera Info: #    Time: 4847 ps  Iteration: 0  Instance: /aes_top/inst_aes/saidaRegSubBytes_a36_a
+ModelSim-Altera Warning: # ** Warning: */DFFEAS HOLD  Low VIOLATION ON DATAIN WITH RESPECT TO CLK;
+ModelSim-Altera Info: # 
+ModelSim-Altera Info: #   Expected := 0.157 ns; Observed := 0.085 ns; At : 4.865 ns
+ModelSim-Altera Info: #    Time: 4865 ps  Iteration: 1  Instance: /aes_top/inst_aes/key_a61_a
+ModelSim-Altera Warning: # ** Warning: */DFFEAS HOLD  Low VIOLATION ON DATAIN WITH RESPECT TO CLK;
+ModelSim-Altera Info: # 
+ModelSim-Altera Info: #   Expected := 0.157 ns; Observed := 0.098 ns; At : 4.884 ns
+ModelSim-Altera Info: #    Time: 4884 ps  Iteration: 1  Instance: /aes_top/inst_aes/key_a79_a
+ModelSim-Altera Warning: # ** Warning: */DFFEAS HOLD  Low VIOLATION ON DATAIN WITH RESPECT TO CLK;
+ModelSim-Altera Info: # 
+ModelSim-Altera Info: #   Expected := 0.157 ns; Observed := 0.104 ns; At : 4.884 ns
+ModelSim-Altera Info: #    Time: 4884 ps  Iteration: 1  Instance: /aes_top/inst_aes/key_a8_a
+ModelSim-Altera Warning: # ** Warning: */DFFEAS HOLD  Low VIOLATION ON DATAIN WITH RESPECT TO CLK;
+ModelSim-Altera Info: # 
+ModelSim-Altera Info: #   Expected := 0.157 ns; Observed := 0.119 ns; At : 4.891 ns
+ModelSim-Altera Info: #    Time: 4891 ps  Iteration: 1  Instance: /aes_top/inst_aes/key_a82_a
+ModelSim-Altera Warning: # ** Warning: */DFFEAS HOLD High VIOLATION ON ENA WITH RESPECT TO CLK;
+ModelSim-Altera Info: # 
+ModelSim-Altera Info: #   Expected := 0.157 ns; Observed := 0.114 ns; At : 4.892 ns
+ModelSim-Altera Info: #    Time: 4892 ps  Iteration: 0  Instance: /aes_top/inst_aes/saidaRegSubBytes_a38_a
+ModelSim-Altera Warning: # ** Warning: */DFFEAS HOLD  Low VIOLATION ON DATAIN WITH RESPECT TO CLK;
+ModelSim-Altera Info: # 
+ModelSim-Altera Info: #   Expected := 0.157 ns; Observed := 0.129 ns; At : 4.914 ns
+ModelSim-Altera Info: #    Time: 4914 ps  Iteration: 1  Instance: /aes_top/inst_aes/key_a3_a
+ModelSim-Altera Warning: # ** Warning: */DFFEAS HOLD  Low VIOLATION ON DATAIN WITH RESPECT TO CLK;
+ModelSim-Altera Info: # 
+ModelSim-Altera Info: #   Expected := 0.157 ns; Observed := 0.133 ns; At : 4.918 ns
+ModelSim-Altera Info: #    Time: 4918 ps  Iteration: 1  Instance: /aes_top/inst_aes/key_a27_a
+ModelSim-Altera Warning: # ** Warning: */DFFEAS HOLD  Low VIOLATION ON DATAIN WITH RESPECT TO CLK;
+ModelSim-Altera Info: # 
+ModelSim-Altera Info: #   Expected := 0.157 ns; Observed := 0.144 ns; At : 4.925 ns
+ModelSim-Altera Info: #    Time: 4925 ps  Iteration: 1  Instance: /aes_top/inst_aes/key_a116_a
+ModelSim-Altera Warning: # ** Warning: */DFFEAS HOLD  Low VIOLATION ON DATAIN WITH RESPECT TO CLK;
+ModelSim-Altera Info: # 
+ModelSim-Altera Info: #   Expected := 0.157 ns; Observed := 0.152 ns; At : 4.933 ns
+ModelSim-Altera Info: #    Time: 4933 ps  Iteration: 1  Instance: /aes_top/inst_aes/key_a10_a
+ModelSim-Altera Warning: # ** Warning: */DFFEAS HOLD  Low VIOLATION ON DATAIN WITH RESPECT TO CLK;
+ModelSim-Altera Info: # 
+ModelSim-Altera Info: #   Expected := 0.157 ns; Observed := 0.155 ns; At : 4.938 ns
+ModelSim-Altera Info: #    Time: 4938 ps  Iteration: 1  Instance: /aes_top/inst_aes/key_a118_a
+ModelSim-Altera Warning: # ** Warning: */DFFEAS HOLD  Low VIOLATION ON DATAIN WITH RESPECT TO CLK;
+ModelSim-Altera Info: # 
+ModelSim-Altera Info: #   Expected := 0.157 ns; Observed := 0.001 ns; At : 12.783 ns
+ModelSim-Altera Info: #    Time: 12783 ps  Iteration: 1  Instance: /aes_top/inst_aes/gerador_acnt_a3_a
+ModelSim-Altera Warning: # ** Warning: */DFFEAS HOLD  Low VIOLATION ON ENA WITH RESPECT TO CLK;
+ModelSim-Altera Info: # 
+ModelSim-Altera Info: #   Expected := 0.157 ns; Observed := 0.013 ns; At : 12.789 ns
+ModelSim-Altera Info: #    Time: 12789 ps  Iteration: 0  Instance: /aes_top/inst_aes/saidaRegAddroudKey_a91_a_a_Duplicate_1
+ModelSim-Altera Warning: # ** Warning: */DFFEAS HOLD  Low VIOLATION ON ENA WITH RESPECT TO CLK;
+ModelSim-Altera Info: # 
+ModelSim-Altera Info: #   Expected := 0.157 ns; Observed := 0.011 ns; At : 12.799 ns
+ModelSim-Altera Info: #    Time: 12799 ps  Iteration: 0  Instance: /aes_top/inst_aes/saidaRegAddroudKey_a9_a_a_Duplicate_1
+ModelSim-Altera Warning: # ** Warning: */DFFEAS HOLD  Low VIOLATION ON ENA WITH RESPECT TO CLK;
+ModelSim-Altera Info: # 
+ModelSim-Altera Info: #   Expected := 0.157 ns; Observed := 0.027 ns; At : 12.81 ns
+ModelSim-Altera Info: #    Time: 12810 ps  Iteration: 0  Instance: /aes_top/inst_aes/saidaRegAddroudKey_a68_a_a_Duplicate_1
+ModelSim-Altera Warning: # ** Warning: */DFFEAS HOLD  Low VIOLATION ON ENA WITH RESPECT TO CLK;
+ModelSim-Altera Info: # 
+ModelSim-Altera Info: #   Expected := 0.157 ns; Observed := 0.027 ns; At : 12.81 ns
+ModelSim-Altera Info: #    Time: 12810 ps  Iteration: 0  Instance: /aes_top/inst_aes/saidaRegAddroudKey_a71_a_a_Duplicate_1
+ModelSim-Altera Warning: # ** Warning: */DFFEAS HOLD  Low VIOLATION ON ENA WITH RESPECT TO CLK;
+ModelSim-Altera Info: # 
+ModelSim-Altera Info: #   Expected := 0.157 ns; Observed := 0.07 ns; At : 12.851 ns
+ModelSim-Altera Info: #    Time: 12851 ps  Iteration: 0  Instance: /aes_top/inst_aes/saidaRegAddroudKey_a26_a_a_Duplicate_1
+ModelSim-Altera Warning: # ** Warning: */DFFEAS HOLD  Low VIOLATION ON ENA WITH RESPECT TO CLK;
+ModelSim-Altera Info: # 
+ModelSim-Altera Info: #   Expected := 0.157 ns; Observed := 0.073 ns; At : 12.855 ns
+ModelSim-Altera Info: #    Time: 12855 ps  Iteration: 0  Instance: /aes_top/inst_aes/saidaRegAddroudKey_a52_a_a_Duplicate_1
+ModelSim-Altera Warning: # ** Warning: */DFFEAS HOLD  Low VIOLATION ON ENA WITH RESPECT TO CLK;
+ModelSim-Altera Info: # 
+ModelSim-Altera Info: #   Expected := 0.157 ns; Observed := 0.083 ns; At : 12.856 ns
+ModelSim-Altera Info: #    Time: 12856 ps  Iteration: 0  Instance: /aes_top/inst_aes/saidaRegAddroudKey_a60_a_a_Duplicate_1
+ModelSim-Altera Warning: # ** Warning: */DFFEAS HOLD  Low VIOLATION ON ENA WITH RESPECT TO CLK;
+ModelSim-Altera Info: # 
+ModelSim-Altera Info: #   Expected := 0.157 ns; Observed := 0.083 ns; At : 12.856 ns
+ModelSim-Altera Info: #    Time: 12856 ps  Iteration: 0  Instance: /aes_top/inst_aes/saidaRegAddroudKey_a58_a_a_Duplicate_1
+ModelSim-Altera Warning: # ** Warning: */DFFEAS HOLD  Low VIOLATION ON ENA WITH RESPECT TO CLK;
+ModelSim-Altera Info: # 
+ModelSim-Altera Info: #   Expected := 0.157 ns; Observed := 0.074 ns; At : 12.857 ns
+ModelSim-Altera Info: #    Time: 12857 ps  Iteration: 0  Instance: /aes_top/inst_aes/saidaRegGeradorKey_a45_a
+ModelSim-Altera Warning: # ** Warning: */DFFEAS HOLD  Low VIOLATION ON ENA WITH RESPECT TO CLK;
+ModelSim-Altera Info: # 
+ModelSim-Altera Info: #   Expected := 0.157 ns; Observed := 0.074 ns; At : 12.857 ns
+ModelSim-Altera Info: #    Time: 12857 ps  Iteration: 0  Instance: /aes_top/inst_aes/saidaRegGeradorKey_a13_a
+ModelSim-Altera Warning: # ** Warning: */DFFEAS HOLD  Low VIOLATION ON ENA WITH RESPECT TO CLK;
+ModelSim-Altera Info: # 
+ModelSim-Altera Info: #   Expected := 0.157 ns; Observed := 0.074 ns; At : 12.857 ns
+ModelSim-Altera Info: #    Time: 12857 ps  Iteration: 0  Instance: /aes_top/inst_aes/saidaRegGeradorKey_a77_a
+ModelSim-Altera Warning: # ** Warning: */DFFEAS HOLD  Low VIOLATION ON ENA WITH RESPECT TO CLK;
+ModelSim-Altera Info: # 
+ModelSim-Altera Info: #   Expected := 0.157 ns; Observed := 0.074 ns; At : 12.857 ns
+ModelSim-Altera Info: #    Time: 12857 ps  Iteration: 0  Instance: /aes_top/inst_aes/saidaRegGeradorKey_a109_a
+ModelSim-Altera Warning: # ** Warning: */DFFEAS HOLD  Low VIOLATION ON ENA WITH RESPECT TO CLK;
+ModelSim-Altera Info: # 
+ModelSim-Altera Info: #   Expected := 0.157 ns; Observed := 0.078 ns; At : 12.859 ns
+ModelSim-Altera Info: #    Time: 12859 ps  Iteration: 0  Instance: /aes_top/inst_aes/saidaRegAddroudKey_a29_a_a_Duplicate_1
+ModelSim-Altera Warning: # ** Warning: */DFFEAS HOLD  Low VIOLATION ON ENA WITH RESPECT TO CLK;
+ModelSim-Altera Info: # 
+ModelSim-Altera Info: #   Expected := 0.157 ns; Observed := 0.078 ns; At : 12.859 ns
+ModelSim-Altera Info: #    Time: 12859 ps  Iteration: 0  Instance: /aes_top/inst_aes/saidaRegAddroudKey_a30_a_a_Duplicate_1
+ModelSim-Altera Warning: # ** Warning: */DFFEAS HOLD  Low VIOLATION ON ENA WITH RESPECT TO CLK;
+ModelSim-Altera Info: # 
+ModelSim-Altera Info: #   Expected := 0.157 ns; Observed := 0.082 ns; At : 12.863 ns
+ModelSim-Altera Info: #    Time: 12863 ps  Iteration: 0  Instance: /aes_top/inst_aes/saidaRegAddroudKey_a75_a_a_Duplicate_1
+ModelSim-Altera Warning: # ** Warning: */DFFEAS HOLD  Low VIOLATION ON ENA WITH RESPECT TO CLK;
+ModelSim-Altera Info: # 
+ModelSim-Altera Info: #   Expected := 0.157 ns; Observed := 0.096 ns; At : 12.871 ns
+ModelSim-Altera Info: #    Time: 12871 ps  Iteration: 0  Instance: /aes_top/inst_aes/saidaRegAddroudKey_a88_a_a_Duplicate_1
+ModelSim-Altera Warning: # ** Warning: */DFFEAS HOLD  Low VIOLATION ON ENA WITH RESPECT TO CLK;
+ModelSim-Altera Info: # 
+ModelSim-Altera Info: #   Expected := 0.157 ns; Observed := 0.089 ns; At : 12.872 ns
+ModelSim-Altera Info: #    Time: 12872 ps  Iteration: 0  Instance: /aes_top/inst_aes/saidaRegAddroudKey_a56_a_a_Duplicate_1
+ModelSim-Altera Warning: # ** Warning: */DFFEAS HOLD  Low VIOLATION ON ENA WITH RESPECT TO CLK;
+ModelSim-Altera Info: # 
+ModelSim-Altera Info: #   Expected := 0.157 ns; Observed := 0.089 ns; At : 12.872 ns
+ModelSim-Altera Info: #    Time: 12872 ps  Iteration: 0  Instance: /aes_top/inst_aes/saidaRegAddroudKey_a57_a_a_Duplicate_1
+ModelSim-Altera Warning: # ** Warning: */DFFEAS HOLD  Low VIOLATION ON ENA WITH RESPECT TO CLK;
+ModelSim-Altera Info: # 
+ModelSim-Altera Info: #   Expected := 0.157 ns; Observed := 0.089 ns; At : 12.872 ns
+ModelSim-Altera Info: #    Time: 12872 ps  Iteration: 0  Instance: /aes_top/inst_aes/saidaRegAddroudKey_a62_a_a_Duplicate_1
+ModelSim-Altera Warning: # ** Warning: */DFFEAS HOLD  Low VIOLATION ON ENA WITH RESPECT TO CLK;
+ModelSim-Altera Info: # 
+ModelSim-Altera Info: #   Expected := 0.157 ns; Observed := 0.089 ns; At : 12.872 ns
+ModelSim-Altera Info: #    Time: 12872 ps  Iteration: 0  Instance: /aes_top/inst_aes/saidaRegAddroudKey_a61_a_a_Duplicate_1
+ModelSim-Altera Warning: # ** Warning: */DFFEAS HOLD  Low VIOLATION ON ENA WITH RESPECT TO CLK;
+ModelSim-Altera Info: # 
+ModelSim-Altera Info: #   Expected := 0.157 ns; Observed := 0.098 ns; At : 12.876 ns
+ModelSim-Altera Info: #    Time: 12876 ps  Iteration: 0  Instance: /aes_top/inst_aes/saidaRegAddroudKey_a74_a_a_Duplicate_1
+ModelSim-Altera Warning: # ** Warning: */DFFEAS HOLD  Low VIOLATION ON ENA WITH RESPECT TO CLK;
+ModelSim-Altera Info: # 
+ModelSim-Altera Info: #   Expected := 0.157 ns; Observed := 0.098 ns; At : 12.876 ns
+ModelSim-Altera Info: #    Time: 12876 ps  Iteration: 0  Instance: /aes_top/inst_aes/saidaRegAddroudKey_a77_a_a_Duplicate_1
+ModelSim-Altera Warning: # ** Warning: */DFFEAS HOLD  Low VIOLATION ON ENA WITH RESPECT TO CLK;
+ModelSim-Altera Info: # 
+ModelSim-Altera Info: #   Expected := 0.157 ns; Observed := 0.107 ns; At : 12.889 ns
+ModelSim-Altera Info: #    Time: 12889 ps  Iteration: 0  Instance: /aes_top/inst_aes/saidaRegAddroudKey_a84_a_a_Duplicate_1
+ModelSim-Altera Warning: # ** Warning: */DFFEAS HOLD  Low VIOLATION ON ENA WITH RESPECT TO CLK;
+ModelSim-Altera Info: # 
+ModelSim-Altera Info: #   Expected := 0.157 ns; Observed := 0.107 ns; At : 12.889 ns
+ModelSim-Altera Info: #    Time: 12889 ps  Iteration: 0  Instance: /aes_top/inst_aes/saidaRegAddroudKey_a80_a_a_Duplicate_1
+ModelSim-Altera Warning: # ** Warning: */DFFEAS HOLD  Low VIOLATION ON ENA WITH RESPECT TO CLK;
+ModelSim-Altera Info: # 
+ModelSim-Altera Info: #   Expected := 0.157 ns; Observed := 0.106 ns; At : 12.891 ns
+ModelSim-Altera Info: #    Time: 12891 ps  Iteration: 0  Instance: /aes_top/inst_aes/saidaRegAddroudKey_a50_a_a_Duplicate_1
+ModelSim-Altera Warning: # ** Warning: */DFFEAS HOLD  Low VIOLATION ON ENA WITH RESPECT TO CLK;
+ModelSim-Altera Info: # 
+ModelSim-Altera Info: #   Expected := 0.157 ns; Observed := 0.118 ns; At : 12.894 ns
+ModelSim-Altera Info: #    Time: 12894 ps  Iteration: 0  Instance: /aes_top/inst_aes/saidaRegAddroudKey_a67_a_a_Duplicate_1
+ModelSim-Altera Warning: # ** Warning: */DFFEAS HOLD  Low VIOLATION ON ENA WITH RESPECT TO CLK;
+ModelSim-Altera Info: # 
+ModelSim-Altera Info: #   Expected := 0.157 ns; Observed := 0.113 ns; At : 12.897 ns
+ModelSim-Altera Info: #    Time: 12897 ps  Iteration: 0  Instance: /aes_top/inst_aes/saidaRegAddroudKey_a55_a_a_Duplicate_1
+ModelSim-Altera Warning: # ** Warning: */DFFEAS HOLD  Low VIOLATION ON ENA WITH RESPECT TO CLK;
+ModelSim-Altera Info: # 
+ModelSim-Altera Info: #   Expected := 0.157 ns; Observed := 0.113 ns; At : 12.897 ns
+ModelSim-Altera Info: #    Time: 12897 ps  Iteration: 0  Instance: /aes_top/inst_aes/saidaRegAddroudKey_a51_a_a_Duplicate_1
+ModelSim-Altera Warning: # ** Warning: */DFFEAS HOLD  Low VIOLATION ON ENA WITH RESPECT TO CLK;
+ModelSim-Altera Info: # 
+ModelSim-Altera Info: #   Expected := 0.157 ns; Observed := 0.12 ns; At : 12.902 ns
+ModelSim-Altera Info: #    Time: 12902 ps  Iteration: 0  Instance: /aes_top/inst_aes/saidaRegAddroudKey_a54_a_a_Duplicate_1
+ModelSim-Altera Warning: # ** Warning: */DFFEAS HOLD  Low VIOLATION ON ENA WITH RESPECT TO CLK;
+ModelSim-Altera Info: # 
+ModelSim-Altera Info: #   Expected := 0.157 ns; Observed := 0.12 ns; At : 12.902 ns
+ModelSim-Altera Info: #    Time: 12902 ps  Iteration: 0  Instance: /aes_top/inst_aes/saidaRegAddroudKey_a53_a_a_Duplicate_1
+ModelSim-Altera Warning: # ** Warning: */DFFEAS HOLD  Low VIOLATION ON ENA WITH RESPECT TO CLK;
+ModelSim-Altera Info: # 
+ModelSim-Altera Info: #   Expected := 0.157 ns; Observed := 0.126 ns; At : 12.914 ns
+ModelSim-Altera Info: #    Time: 12914 ps  Iteration: 0  Instance: /aes_top/inst_aes/saidaRegAddroudKey_a14_a_a_Duplicate_1
+ModelSim-Altera Warning: # ** Warning: */DFFEAS HOLD  Low VIOLATION ON ENA WITH RESPECT TO CLK;
+ModelSim-Altera Info: # 
+ModelSim-Altera Info: #   Expected := 0.157 ns; Observed := 0.126 ns; At : 12.914 ns
+ModelSim-Altera Info: #    Time: 12914 ps  Iteration: 0  Instance: /aes_top/inst_aes/saidaRegAddroudKey_a13_a_a_Duplicate_1
+ModelSim-Altera Warning: # ** Warning: */DFFEAS HOLD  Low VIOLATION ON ENA WITH RESPECT TO CLK;
+ModelSim-Altera Info: # 
+ModelSim-Altera Info: #   Expected := 0.157 ns; Observed := 0.134 ns; At : 12.915 ns
+ModelSim-Altera Info: #    Time: 12915 ps  Iteration: 0  Instance: /aes_top/inst_aes/saidaRegAddroudKey_a49_a_a_Duplicate_1
+ModelSim-Altera Warning: # ** Warning: */DFFEAS HOLD  Low VIOLATION ON ENA WITH RESPECT TO CLK;
+ModelSim-Altera Info: # 
+ModelSim-Altera Info: #   Expected := 0.157 ns; Observed := 0.132 ns; At : 12.915 ns
+ModelSim-Altera Info: #    Time: 12915 ps  Iteration: 0  Instance: /aes_top/inst_aes/saidaRegAddroudKey_a47_a_a_Duplicate_1
+ModelSim-Altera Warning: # ** Warning: */DFFEAS HOLD  Low VIOLATION ON ENA WITH RESPECT TO CLK;
+ModelSim-Altera Info: # 
+ModelSim-Altera Info: #   Expected := 0.157 ns; Observed := 0.127 ns; At : 12.916 ns
+ModelSim-Altera Info: #    Time: 12916 ps  Iteration: 0  Instance: /aes_top/inst_aes/saidaRegAddroudKey_a8_a_a_Duplicate_1
+ModelSim-Altera Warning: # ** Warning: */DFFEAS HOLD High VIOLATION ON ENA WITH RESPECT TO CLK;
+ModelSim-Altera Info: # 
+ModelSim-Altera Info: #   Expected := 0.157 ns; Observed := 0.001 ns; At : 16.785 ns
+ModelSim-Altera Info: #    Time: 16785 ps  Iteration: 0  Instance: /aes_top/inst_aes/saidaRegAddroudKey_a10_a_a_Duplicate_1
+ModelSim-Altera Warning: # ** Warning: */DFFEAS HOLD High VIOLATION ON ENA WITH RESPECT TO CLK;
+ModelSim-Altera Info: # 
+ModelSim-Altera Info: #   Expected := 0.157 ns; Observed := 0.021 ns; At : 16.79 ns
+ModelSim-Altera Info: #    Time: 16790 ps  Iteration: 0  Instance: /aes_top/inst_aes/saidaRegAddroudKey_a119_a_a_Duplicate_1
+ModelSim-Altera Warning: # ** Warning: */DFFEAS HOLD High VIOLATION ON ENA WITH RESPECT TO CLK;
+ModelSim-Altera Info: # 
+ModelSim-Altera Info: #   Expected := 0.157 ns; Observed := 0.008 ns; At : 16.795 ns
+ModelSim-Altera Info: #    Time: 16795 ps  Iteration: 0  Instance: /aes_top/inst_aes/saidaRegAddroudKey_a11_a_a_Duplicate_1
+ModelSim-Altera Warning: # ** Warning: */DFFEAS HOLD High VIOLATION ON ENA WITH RESPECT TO CLK;
+ModelSim-Altera Info: # 
+ModelSim-Altera Info: #   Expected := 0.157 ns; Observed := 0.032 ns; At : 16.8 ns
+ModelSim-Altera Info: #    Time: 16800 ps  Iteration: 0  Instance: /aes_top/inst_aes/saidaRegAddroudKey_a114_a_a_Duplicate_1
+ModelSim-Altera Warning: # ** Warning: */DFFEAS HOLD High VIOLATION ON ENA WITH RESPECT TO CLK;
+ModelSim-Altera Info: # 
+ModelSim-Altera Info: #   Expected := 0.157 ns; Observed := 0.029 ns; At : 16.801 ns
+ModelSim-Altera Info: #    Time: 16801 ps  Iteration: 0  Instance: /aes_top/inst_aes/saidaRegAddroudKey_a95_a_a_Duplicate_1
+ModelSim-Altera Warning: # ** Warning: */DFFEAS HOLD High VIOLATION ON ENA WITH RESPECT TO CLK;
+ModelSim-Altera Info: # 
+ModelSim-Altera Info: #   Expected := 0.157 ns; Observed := 0.018 ns; At : 16.803 ns
+ModelSim-Altera Info: #    Time: 16803 ps  Iteration: 0  Instance: /aes_top/inst_aes/saidaRegAddroudKey_a15_a_a_Duplicate_1
+ModelSim-Altera Warning: # ** Warning: */DFFEAS HOLD High VIOLATION ON ENA WITH RESPECT TO CLK;
+ModelSim-Altera Info: # 
+ModelSim-Altera Info: #   Expected := 0.157 ns; Observed := 0.027 ns; At : 16.813 ns
+ModelSim-Altera Info: #    Time: 16813 ps  Iteration: 0  Instance: /aes_top/inst_aes/saidaRegAddroudKey_a12_a_a_Duplicate_1
+ModelSim-Altera Warning: # ** Warning: */DFFEAS HOLD High VIOLATION ON ENA WITH RESPECT TO CLK;
+ModelSim-Altera Info: # 
+ModelSim-Altera Info: #   Expected := 0.157 ns; Observed := 0.026 ns; At : 16.813 ns
+ModelSim-Altera Info: #    Time: 16813 ps  Iteration: 0  Instance: /aes_top/inst_aes/saidaRegAddroudKey_a101_a_a_Duplicate_1
+ModelSim-Altera Warning: # ** Warning: */DFFEAS HOLD High VIOLATION ON ENA WITH RESPECT TO CLK;
+ModelSim-Altera Info: # 
+ModelSim-Altera Info: #   Expected := 0.157 ns; Observed := 0.026 ns; At : 16.813 ns
+ModelSim-Altera Info: #    Time: 16813 ps  Iteration: 0  Instance: /aes_top/inst_aes/saidaRegAddroudKey_a102_a_a_Duplicate_1
+ModelSim-Altera Warning: # ** Warning: */DFFEAS HOLD High VIOLATION ON ENA WITH RESPECT TO CLK;
+ModelSim-Altera Info: # 
+ModelSim-Altera Info: #   Expected := 0.157 ns; Observed := 0.026 ns; At : 16.813 ns
+ModelSim-Altera Info: #    Time: 16813 ps  Iteration: 0  Instance: /aes_top/inst_aes/saidaRegAddroudKey_a103_a_a_Duplicate_1
+ModelSim-Altera Warning: # ** Warning: */DFFEAS HOLD High VIOLATION ON ENA WITH RESPECT TO CLK;
+ModelSim-Altera Info: # 
+ModelSim-Altera Info: #   Expected := 0.157 ns; Observed := 0.039 ns; At : 16.821 ns
+ModelSim-Altera Info: #    Time: 16821 ps  Iteration: 0  Instance: /aes_top/inst_aes/saidaRegAddroudKey_a126_a_a_Duplicate_1
+ModelSim-Altera Warning: # ** Warning: */DFFEAS HOLD High VIOLATION ON ENA WITH RESPECT TO CLK;
+ModelSim-Altera Info: # 
+ModelSim-Altera Info: #   Expected := 0.157 ns; Observed := 0.039 ns; At : 16.821 ns
+ModelSim-Altera Info: #    Time: 16821 ps  Iteration: 0  Instance: /aes_top/inst_aes/saidaRegAddroudKey_a120_a_a_Duplicate_1
+ModelSim-Altera Warning: # ** Warning: */DFFEAS HOLD High VIOLATION ON ENA WITH RESPECT TO CLK;
+ModelSim-Altera Info: # 
+ModelSim-Altera Info: #   Expected := 0.157 ns; Observed := 0.039 ns; At : 16.821 ns
+ModelSim-Altera Info: #    Time: 16821 ps  Iteration: 0  Instance: /aes_top/inst_aes/saidaRegAddroudKey_a125_a_a_Duplicate_1
+ModelSim-Altera Warning: # ** Warning: */DFFEAS HOLD High VIOLATION ON ENA WITH RESPECT TO CLK;
+ModelSim-Altera Info: # 
+ModelSim-Altera Info: #   Expected := 0.157 ns; Observed := 0.047 ns; At : 16.823 ns
+ModelSim-Altera Info: #    Time: 16823 ps  Iteration: 0  Instance: /aes_top/inst_aes/saidaRegAddroudKey_a93_a_a_Duplicate_1
+ModelSim-Altera Warning: # ** Warning: */DFFEAS HOLD High VIOLATION ON ENA WITH RESPECT TO CLK;
+ModelSim-Altera Info: # 
+ModelSim-Altera Info: #   Expected := 0.157 ns; Observed := 0.046 ns; At : 16.823 ns
+ModelSim-Altera Info: #    Time: 16823 ps  Iteration: 0  Instance: /aes_top/inst_aes/saidaRegAddroudKey_a41_a_a_Duplicate_1
+ModelSim-Altera Warning: # ** Warning: */DFFEAS HOLD High VIOLATION ON ENA WITH RESPECT TO CLK;
+ModelSim-Altera Info: # 
+ModelSim-Altera Info: #   Expected := 0.157 ns; Observed := 0.047 ns; At : 16.823 ns
+ModelSim-Altera Info: #    Time: 16823 ps  Iteration: 0  Instance: /aes_top/inst_aes/saidaRegAddroudKey_a94_a_a_Duplicate_1
+ModelSim-Altera Warning: # ** Warning: */DFFEAS HOLD High VIOLATION ON ENA WITH RESPECT TO CLK;
+ModelSim-Altera Info: # 
+ModelSim-Altera Info: #   Expected := 0.157 ns; Observed := 0.054 ns; At : 16.837 ns
+ModelSim-Altera Info: #    Time: 16837 ps  Iteration: 0  Instance: /aes_top/inst_aes/saidaRegAddroudKey_a127_a_a_Duplicate_1
+ModelSim-Altera Warning: # ** Warning: */DFFEAS HOLD High VIOLATION ON ENA WITH RESPECT TO CLK;
+ModelSim-Altera Info: # 
+ModelSim-Altera Info: #   Expected := 0.157 ns; Observed := 0.054 ns; At : 16.837 ns
+ModelSim-Altera Info: #    Time: 16837 ps  Iteration: 0  Instance: /aes_top/inst_aes/saidaRegAddroudKey_a123_a_a_Duplicate_1
+ModelSim-Altera Warning: # ** Warning: */DFFEAS HOLD High VIOLATION ON ENA WITH RESPECT TO CLK;
+ModelSim-Altera Info: # 
+ModelSim-Altera Info: #   Expected := 0.157 ns; Observed := 0.064 ns; At : 16.838 ns
+ModelSim-Altera Info: #    Time: 16838 ps  Iteration: 0  Instance: /aes_top/inst_aes/saidaRegAddroudKey_a7_a_a_Duplicate_1
+ModelSim-Altera Warning: # ** Warning: */DFFEAS HOLD High VIOLATION ON ENA WITH RESPECT TO CLK;
+ModelSim-Altera Info: # 
+ModelSim-Altera Info: #   Expected := 0.157 ns; Observed := 0.054 ns; At : 16.841 ns
+ModelSim-Altera Info: #    Time: 16841 ps  Iteration: 0  Instance: /aes_top/inst_aes/saidaRegAddroudKey_a99_a_a_Duplicate_1
+ModelSim-Altera Warning: # ** Warning: */DFFEAS HOLD High VIOLATION ON ENA WITH RESPECT TO CLK;
+ModelSim-Altera Info: # 
+ModelSim-Altera Info: #   Expected := 0.157 ns; Observed := 0.094 ns; At : 16.876 ns
+ModelSim-Altera Info: #    Time: 16876 ps  Iteration: 0  Instance: /aes_top/inst_aes/saidaRegAddroudKey_a90_a_a_Duplicate_1
+ModelSim-Altera Warning: # ** Warning: */DFFEAS HOLD High VIOLATION ON ENA WITH RESPECT TO CLK;
+ModelSim-Altera Info: # 
+ModelSim-Altera Info: #   Expected := 0.157 ns; Observed := 0.136 ns; At : 16.912 ns
+ModelSim-Altera Info: #    Time: 16912 ps  Iteration: 0  Instance: /aes_top/inst_aes/saidaRegAddroudKey_a91_a_a_Duplicate_1
+ModelSim-Altera Warning: # ** Warning: */DFFEAS HOLD High VIOLATION ON ENA WITH RESPECT TO CLK;
+ModelSim-Altera Info: # 
+ModelSim-Altera Info: #   Expected := 0.157 ns; Observed := 0.144 ns; At : 16.927 ns
+ModelSim-Altera Info: #    Time: 16927 ps  Iteration: 0  Instance: /aes_top/inst_aes/saidaRegGeradorKey_a45_a
+ModelSim-Altera Warning: # ** Warning: */DFFEAS HOLD High VIOLATION ON ENA WITH RESPECT TO CLK;
+ModelSim-Altera Info: # 
+ModelSim-Altera Info: #   Expected := 0.157 ns; Observed := 0.144 ns; At : 16.927 ns
+ModelSim-Altera Info: #    Time: 16927 ps  Iteration: 0  Instance: /aes_top/inst_aes/saidaRegGeradorKey_a13_a
+ModelSim-Altera Warning: # ** Warning: */DFFEAS HOLD High VIOLATION ON ENA WITH RESPECT TO CLK;
+ModelSim-Altera Info: # 
+ModelSim-Altera Info: #   Expected := 0.157 ns; Observed := 0.144 ns; At : 16.927 ns
+ModelSim-Altera Info: #    Time: 16927 ps  Iteration: 0  Instance: /aes_top/inst_aes/saidaRegGeradorKey_a77_a
+ModelSim-Altera Warning: # ** Warning: */DFFEAS HOLD High VIOLATION ON ENA WITH RESPECT TO CLK;
+ModelSim-Altera Info: # 
+ModelSim-Altera Info: #   Expected := 0.157 ns; Observed := 0.144 ns; At : 16.927 ns
+ModelSim-Altera Info: #    Time: 16927 ps  Iteration: 0  Instance: /aes_top/inst_aes/saidaRegGeradorKey_a109_a
+ModelSim-Altera Warning: # ** Warning: */DFFEAS HOLD High VIOLATION ON ENA WITH RESPECT TO CLK;
+ModelSim-Altera Info: # 
+ModelSim-Altera Info: #   Expected := 0.157 ns; Observed := 0.153 ns; At : 16.941 ns
+ModelSim-Altera Info: #    Time: 16941 ps  Iteration: 0  Instance: /aes_top/inst_aes/saidaRegAddroudKey_a9_a_a_Duplicate_1
+ModelSim-Altera Info: # Break key hit 
+ModelSim-Altera Info: # Simulation stop requested.
+Info: NativeLink simulation flow was successful

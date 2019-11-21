@@ -1,0 +1,105 @@
+library IEEE;
+use IEEE.STD_LOGIC_1164.ALL;
+use ieee.numeric_std.all;
+
+entity mixcolumns is
+port (
+		 men_in : in std_logic_vector (31 downto 0);
+		 seletor: in std_logic_vector(1 downto 0);
+		 men_out : out std_logic_vector (7 downto 0);
+		 auxEntrada1: out std_logic_vector(8 downto 0);
+		 auxEntrada2: out std_logic_vector(8 downto 0)
+		);
+end mixcolumns;
+
+architecture Behavioral of mixcolumns is
+
+	signal saida,saida3,aux :std_logic_vector(7 downto 0);
+	signal entrada1,entrada2,auxentrada22,auxSaida,auxSaida2 : std_logic_vector (8 downto 0);
+   begin
+		process(seletor)
+			begin
+				case seletor is
+				when "00" =>
+							entrada1 <= men_in(31 downto 24) & '0';
+							auxentrada22 <= men_in(23 downto 16) & '0';
+							entrada2 <= auxentrada22 xor men_in(23 downto 16);
+							
+							if(entrada1(8)='1') then
+								auxSaida <= entrada1 xor "100011011";
+								saida <= auxSaida(7 downto 0);
+							else
+								saida <= entrada1(7 downto 0);
+							end if;
+							
+							if(entrada2(8)='1') then
+								auxSaida2 <= entrada2 xor "100011011";
+								saida3 <= auxSaida2(7 downto 0);
+							else
+								saida3 <= entrada2(7 downto 0);
+							end if;
+							men_out <= saida(7 downto 0) xor saida3(7 downto 0) xor men_in(15 downto 8) xor men_in(7 downto 0);
+				when "01"  =>
+					entrada1 <= men_in(23 downto 16) & '0';
+							auxentrada22 <= men_in(15 downto 8) & '0';
+							entrada2 <= auxentrada22 xor men_in(15 downto 8);
+							
+							if(entrada1(8)='1') then
+								auxSaida <= entrada1 xor "100011011";
+								saida <= auxSaida(7 downto 0);
+							else
+								saida <= entrada1(7 downto 0);
+							end if;
+							
+							if(entrada2(8)='1') then
+								auxSaida2 <= entrada2 xor "100011011";
+								saida3 <= auxSaida2(7 downto 0);
+							else
+								saida3 <= entrada2(7 downto 0);
+							end if;
+							men_out <= saida(7 downto 0) xor saida3(7 downto 0) xor men_in(31 downto 24) xor men_in(7 downto 0);
+							
+				when "10"  =>
+					entrada1 <= men_in(15 downto 8) & '0';
+							auxentrada22 <= men_in(7 downto 0) & '0';
+							entrada2 <= auxentrada22 xor men_in(7 downto 0);
+							
+							if(entrada1(8)='1') then
+								auxSaida <= entrada1 xor "100011011";
+								saida <= auxSaida(7 downto 0);
+							else
+								saida <= entrada1(7 downto 0);
+							end if;
+							
+							if(entrada2(8)='1') then
+								auxSaida2 <= entrada2 xor "100011011";
+								saida3 <= auxSaida2(7 downto 0);
+							else
+								saida3 <= entrada2(7 downto 0);
+							end if;
+							men_out <= saida(7 downto 0) xor saida3(7 downto 0) xor men_in(31 downto 24) xor men_in(23 downto 16);
+							
+				when "11"  =>
+					entrada1 <= men_in(7 downto 0) & '0';
+							auxentrada22 <= men_in(31 downto 24) & '0';
+							entrada2 <= auxentrada22 xor men_in(31 downto 24);
+							
+							if(entrada1(8)='1') then
+								auxSaida <= entrada1 xor "100011011";
+								saida <= auxSaida(7 downto 0);
+							else
+								saida <= entrada1(7 downto 0);
+							end if;
+							
+							if(entrada2(8)='1') then
+								auxSaida2 <= entrada2 xor "100011011";
+								saida3 <= auxSaida2(7 downto 0);
+							else
+								saida3 <= entrada2(7 downto 0);
+							end if;
+							men_out <= saida(7 downto 0) xor saida3(7 downto 0) xor men_in(23 downto 16) xor men_in(15 downto 8);
+				when others =>
+					men_out <= "00000000";
+				end case;
+		end process;		
+		end Behavioral;

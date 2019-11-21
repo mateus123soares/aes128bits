@@ -1,0 +1,98 @@
+-- Quartus II VHDL Template
+-- Signed Adder
+
+library ieee;
+use ieee.std_logic_1164.all;
+use ieee.numeric_std.all;
+
+entity aes_top is
+
+
+end entity;
+
+architecture rtl of aes_top is
+
+component aes is
+
+	port 
+	(
+		keyW: in std_logic_vector (127 downto 0);
+		saidaOut: out std_logic_vector (127 downto 0);
+		mensagem: in std_logic_vector(127 downto 0);
+		clkW:in std_logic;
+		resetW : in std_logic;
+		inputMaquina : in std_logic
+	);
+
+end component;
+
+
+component fsm is
+
+port(
+		clk		 : in	std_logic;
+		enRegSaidaAddRoudKey : out std_logic;
+		enRegSaidaAes: out std_logic; --Signal habilita registrador
+		enRegEntradaAes: out std_logic; --Signal habilita registrador
+		reset	 : in	std_logic; --Signal reset na maquida de estados
+		resetFsm : out std_logic; --Signal de saida para reset
+		countFsm	 : out	std_logic; --Signal habilita contador +4
+		estado : out std_logic_vector(3 downto 0);
+		input : in std_logic;
+		roud1 : out std_logic
+	);
+
+end component;
+	
+	--Signal entidade AES
+	signal keyW_sg,saidaOut_sg:std_logic_vector(127 downto 0);
+	signal clkW_sg: std_logic := '0';
+	signal resetW_sg: std_logic := '0';
+	signal mensagem_sg:std_logic_vector(127 downto 0);
+	--Signal entidade FSM
+	signal enregEntradaAes_sg:std_logic;
+	signal enregSaidaAes_sg:std_logic;
+	signal countFsm_sg:std_logic;
+	signal enRegSaidaAddRoudKey_sg :std_logic;
+	signal resetFsm_sg:std_logic;
+	signal estadoAtual:std_logic_vector(3 downto 0);
+	signal inputMaquina2: std_logic;
+	
+begin
+
+	inst_aes:aes port map(
+							keyW => keyW_sg,
+							mensagem => mensagem_sg,
+							saidaOut => saidaOut_sg,
+							clkW => clkW_sg,
+							resetW => resetW_sg,
+							inputMaquina => inputMaquina2
+	);
+	
+	fsm_aes: fsm port map(
+		clk => clkW_sg,	 
+		enRegSaidaAes =>	enRegSaidaAes_sg,
+		enRegEntradaAes => enregEntradaAes_sg,
+		enRegSaidaAddRoudKey => enRegSaidaAddRoudKey_sg,
+		reset	=> resetW_sg,
+		resetFsm => resetFsm_sg,
+		countFsm => countFsm_sg,
+		estado => estadoAtual,
+		input => inputMaquina2
+	);
+	
+	clkW_sg <=not clkW_sg after 5ns;
+	
+	process
+	begin
+		wait for 0ns;
+			keyW_sg <= "00000000000000010000001000000011000001000000010100000110000001110000100000001001000010100000101100001100000011010000111000001111";
+			mensagem_sg <="00000000000100010010001000110011010001000101010101100110011101111000100010011001101010101011101111001100110111011110111011111111";
+		  resetW_sg <= '1';
+		  inputMaquina2 <= '0';
+		wait for  5ns;
+			inputMaquina2 <= '0';
+			resetW_sg <= '0';
+		wait;
+	end process;
+end rtl;

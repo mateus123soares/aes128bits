@@ -1,0 +1,100 @@
+library ieee;
+use ieee.std_logic_1164.all;
+use ieee.numeric_std.all;
+--63cab7040953d051cd60e0e7ba70e18c
+--00101011011111100001010100010110001010001010111011010010101001101010101111110111000101011000100000001001110011110100111100111100
+
+--chave2
+--000102030405060708090a0b0c0d0e0f
+-- mensagem2
+-- 00112233445566778899aabbccddeeff
+
+entity aes is
+
+	port 
+	(
+		keyW: in std_logic_vector (127 downto 0);
+		saidaReg: out std_logic_vector (127 downto 0);
+		clkW:in std_logic;
+		resetW : in std_logic
+	);
+
+end aes;
+
+architecture Behavior of aes is
+
+component geradorKey is
+	 port(
+		key: in std_logic_vector(127 downto 0);
+		saida: out std_logic_vector(127 downto 0);
+		clk: in std_logic;
+		reset: in std_logic;
+		count: in std_logic
+	 );
+
+end component;
+
+component addRoundKey is
+	port (
+		men_in : in std_logic_vector (127 downto 0);
+      key	: in std_logic_vector (127 downto 0);
+		men_out : out std_logic_vector (127 downto 0);
+		clk : in std_logic
+	);
+end component;
+
+
+component fsm is
+
+	port(
+		clk		 : in	std_logic;
+		enRegSaidaAes: out std_logic;
+		enRegEntradaAes: out std_logic;
+		reset	 : in	std_logic;
+		resetFsm : out std_logic;
+		countFsm	 : out	std_logic
+	);
+
+end component;
+	
+--Declarando sinais
+signal key,saida,saidaComp : std_logic_vector (127 downto 0);
+signal countFsm,resetFsm,enRegSaidaAes,enRegEntradaAes: std_logic;
+
+begin
+
+--Realizando por map
+gerador: geradorKey port map(key(127 downto 0),saida(127 downto 0),clk => clkW,reset => resetFsm,count =>countFsm);
+
+f:fsm port map(clk => clkW, reset =>resetW,countFsm=>countFsm,resetFsm => resetFsm,enRegSaidaAes=>enRegSaidaAes,enregEntradaAes=>enRegEntradaAes);
+
+comp_AddroudKey: addRoundKey port map(
+
+						clk => clkW,
+						men_in =>"00000000000100010010001000110011010001000101010101100110011101111000100010011001101010101011101111001100110111011110111011111111",
+						men_out => saidaReg,
+						key => saidaComp
+					);
+
+
+--Saida pós registrador
+
+--Realizando operações
+process(clkW,key,resetW,saida)
+begin
+	--Registrador entrada
+	if(rising_edge(clkW) and enRegEntradaAes='1') then
+		if(resetFsm ='1') then
+			key <= keyW;
+			saidaComp <= keyW;
+		else
+			key <= saidaComp;
+		end if;
+	end if;
+	--Registrador saida
+	if(rising_edge(clkW) and enRegSaidaAes='1') then
+			saidaComp <= saida;
+	end if;
+end process;
+
+end Behavior;

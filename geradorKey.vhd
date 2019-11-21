@@ -1,0 +1,105 @@
+library ieee;
+use ieee.std_logic_1164.all;
+use ieee.numeric_std.all;
+
+entity geradorKey is
+	
+	generic
+	(
+		MIN_COUNT : natural := 4;
+		MAX_COUNT : natural := 255
+	);
+
+	 port(
+		key: in std_logic_vector(127 downto 0);
+		saida: out std_logic_vector(127 downto 0);
+		clk		  : in std_logic;
+		reset	  : in std_logic;
+		count	  : in std_logic;
+		saidaCont: inout std_logic_vector(7 downto 0);
+		saidaContador : out std_logic_vector(7 downto 0)
+	 );
+
+end geradorKey;
+
+architecture Behavior of geradorKey is
+
+	--Instanciando component sbox
+	component sbox is
+	port(
+		--reset				: in 	std_logic;
+		--clock				: in 	std_logic;
+		state_index			: in 	std_logic_vector(7 downto 0);
+		rlps_0				: out 	std_logic_vector(7 downto 0)
+		);
+	end component;
+	
+	--Instanciando component rcom
+	component rcom is
+	port 
+	(
+		indice : in std_logic_vector  (7 downto 0);
+		result : out std_logic_vector (7 downto 0)
+	);
+	end component;
+
+	--declarando sinais
+	signal word,word1,word2,word3 : std_logic_vector(31 downto 0);
+	signal temp,subChave,subChave1,subChave2,subChave3: std_logic_vector(31 downto 0);
+	signal shift,resultSbox,Rcon: std_logic_vector(31 downto 0);
+	signal RcomXor: std_logic_vector(7 downto 0);
+	
+	begin
+	
+	
+	process (clk,saidaCont)
+		variable   cnt : integer range MIN_COUNT to MAX_COUNT;
+	begin
+		if (rising_edge(clk)) then
+
+			if reset = '1' then
+				-- Reset the counter to 0
+				cnt := 4;
+
+			elsif count = '1' then
+				-- Increment the counter if counting is enabled			   
+				cnt := cnt + 4;
+
+			end if;
+		end if;
+
+		-- Output the current count
+		saidaCont <= std_logic_vector(to_unsigned(cnt,saidaCont'length));
+		saidaContador <= saidaCont;
+	end process;
+	
+	--Separando key em 4 palavras;
+	word <= key(127 downto 96);
+	word1 <= key(95 downto 64);
+	word2 <= key(63 downto 32);
+	word3 <= key(31 downto 0);
+	temp <= word3;
+	
+	--Trocando primeiro byte e realizando o shift
+	shift <= temp(23 downto 0) & temp(31 downto 24);	
+	
+	--Passando pelo sbox
+	e4:sbox port map(shift(31  downto 24),resultSbox(31  downto 24));
+	e3:sbox port map(shift(23  downto 16),resultSbox(23  downto 16));
+	e2:sbox port map(shift(15  downto 8),resultSbox(15  downto 8));
+	e1:sbox port map(shift(7  downto 0),resultSbox(7  downto 0));
+	
+	--Retornando valor da tabela do Rcon;
+	z1:rcom port map(saidaCont,RcomXor);
+	Rcon <= (resultSbox(31 downto 24) xor RcomXor) & resultSbox(23 downto 0);
+	
+	--Gerando sub chaves e concatenado nova chave
+	subChave <= Rcon(31 downto 0) xor word(31 downto 0);
+	subChave1 <= subChave(31 downto 0) xor word1(31 downto 0);
+	subChave2 <= subChave1(31 downto 0) xor word2(31 downto 0);
+	subChave3 <= subChave2(31 downto 0) xor word3(31 downto 0);
+	
+	saida <= subChave & subChave1 & subChave2 & subChave3;
+		
+	end Behavior;
+	
