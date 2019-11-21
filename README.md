@@ -1,6 +1,7 @@
 # aes128bits
-Algoritmo de Criptografia AES 128 bits , Feito em VHDL
+Algoritmo de Criptografia AES 128 bits
 
-Desenvolvido por 
-  Mateus Soares
-  Marcelo Marchioro
+Desenvolvido em VHDL
+
+Autores :
+  Mateus Soares e Marcelo Marchioro
